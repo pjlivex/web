@@ -1,0 +1,3 @@
+package com.campusvibe.entity;
+import jakarta.persistence.*; import java.time.LocalDateTime;
+@Entity @Table(name="registrations",uniqueConstraints=@UniqueConstraint(columnNames={"student_id","event_id"})) public class Registration { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; @Column(unique=true,nullable=false) public String registrationCode; @ManyToOne(optional=false) public User student; @ManyToOne(optional=false) public Event event; public LocalDateTime registrationDate=LocalDateTime.now(); @Enumerated(EnumType.STRING) public RegistrationStatus status=RegistrationStatus.PENDING; public Registration(){} }

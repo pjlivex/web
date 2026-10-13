@@ -1,0 +1,3 @@
+package com.campusvibe.entity;
+import jakarta.persistence.*; import java.time.*;
+@Entity @Table(name="events") public class Event { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; @Column(nullable=false) public String name; @Column(length=3000) public String description; @ManyToOne(optional=false) public Category category; public String eventType; public LocalDate date; public LocalTime startTime,endTime; @ManyToOne public Venue venue; public Integer maxParticipants; public LocalDateTime registrationDeadline; public Double entryFee=0.0; @Column(length=3000) public String rules; @ManyToOne public User coordinator; @ManyToOne public User judge; public String imageUrl; public String status="UPCOMING"; }

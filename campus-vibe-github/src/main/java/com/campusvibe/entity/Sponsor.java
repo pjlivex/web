@@ -1,0 +1,1 @@
+package com.campusvibe.entity; import jakarta.persistence.*; @Entity public class Sponsor { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; public String name,logoUrl,website,tier; }

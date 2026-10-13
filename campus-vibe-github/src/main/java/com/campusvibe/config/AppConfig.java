@@ -1,0 +1,1 @@
+package com.campusvibe.config; import org.springframework.context.annotation.*; import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity; @Configuration @EnableMethodSecurity public class AppConfig {}
